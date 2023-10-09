@@ -1,15 +1,15 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Topbar from './component/topbar/Topbar';
-import Feed from './component/feed/Feed';
-import { ProductContextProvider } from './component/feed/shop/db/ProductContext';
-import About from './component/pages/About';
-import Shared from './component/feed/shop/Shared';
-import ProductDetails from './component/feed/shop/ProductDetails';
+import Feed from './pages/Home/Feed';
+import { ProductContextProvider } from './db/ProductContext';
+import About from './pages/About';
+import ProductDetails from './pages/Products/ProductDetails';
 import Cart from './component/Cart/Cart';
 import SearchResults from './component/SearchResults/SearchResults';
-import { ApiDataProvider } from './component/feed/shop/db/ApiDataContext';
+import { ApiDataProvider } from './db/ApiDataContext';
 import TestPage from './component/TestPage';
+import Products from './pages/Products/Shared';
 
 
 
@@ -23,7 +23,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Feed />} />
         <Route path='/about' element={<About />} />
-        <Route path='/products' element={<Shared />} />
+        <Route path='/products' element={<Products />} />
         <Route path='/products/:title' element={<ProductDetails />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/result' element={<SearchResults />} />

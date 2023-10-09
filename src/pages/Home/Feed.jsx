@@ -1,14 +1,12 @@
 import React from 'react'
-import './Feed.css'
 import FeedTopCard from './FeedTopCard'
-import Shared from './shop/Shared'
+import Shared from '../Products/Shared'
 
 
 
 const Feed = () => {
   return (
-    <div className='feed'>
-
+    <div className='mx-0' >
         <FeedTopCard />
         <Shared />
     </div>

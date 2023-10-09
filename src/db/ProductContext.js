@@ -69,23 +69,128 @@ export const ProductContextProvider = (props) => {
         setFilteredList(products)
       }
 
-
-      const [result, setResult] = useState([])
-      const filterBySearch = (e) =>{
-        const query = e.target.value;
-
-
+      const filterBySearchRed = () =>{
+        const query = "red"
         
         var updatedList = [...products]
     
         updatedList = updatedList.filter((product) => {
-          return product.title.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+          return product.color.toLowerCase().indexOf(query.toLowerCase()) !== -1;
         }
         )
         
     
-      setResult(updatedList);
-      localStorage.setItem('result', JSON.stringify(updatedList));
+      setFilteredList(updatedList);
+      }
+
+      const filterBySearchGreen = () =>{
+        const query = "green"
+        
+        var updatedList = [...products]
+    
+        updatedList = updatedList.filter((product) => {
+          return product.color.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+        }
+        )
+        
+    
+      setFilteredList(updatedList);
+      }
+
+      const filterBySearchWhite = () =>{
+        const query = "white"
+        
+        var updatedList = [...products]
+    
+        updatedList = updatedList.filter((product) => {
+          return product.color.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+        }
+        )
+        
+    
+      setFilteredList(updatedList);
+      }
+
+      const filterBySearchBlack = () =>{
+        const query = "black"
+        
+        var updatedList = [...products]
+    
+        updatedList = updatedList.filter((product) => {
+          return product.color.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+        }
+        )
+        
+    
+      setFilteredList(updatedList);
+      }
+      const filterBySearchSneakers= () =>{
+        const query = "sneakers"
+        
+        var updatedList = [...products]
+    
+        updatedList = updatedList.filter((product) => {
+          return product.category.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+        }
+        )
+        
+    
+      setFilteredList(updatedList);
+      }
+      const filterBySearchHeels= () =>{
+        const query = "heels"
+        
+        var updatedList = [...products]
+    
+        updatedList = updatedList.filter((product) => {
+          return product.category.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+        }
+        )
+        
+    
+      setFilteredList(updatedList);
+      }
+      const filterBySearchFlats= () =>{
+        const query = "flats"
+        
+        var updatedList = [...products]
+    
+        updatedList = updatedList.filter((product) => {
+          return product.category.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+        }
+        )
+        
+    
+      setFilteredList(updatedList);
+      }
+      const filterBySearchSandals= () =>{
+        const query = "sandals"
+        
+        var updatedList = [...products]
+    
+        updatedList = updatedList.filter((product) => {
+          return product.category.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+        }
+        )
+        
+    
+      setFilteredList(updatedList);
+      }
+      const [result, setResult] = useState([])
+      const [searchInput, setSearchInput] = useState('')
+      
+      const filterBySearch = () =>{
+        const trimmed = searchInput.trim();
+        
+        if (trimmed === "") {
+          alert("Please enter a valid search")
+          return (<h1>Invalid</h1>);
+        }
+        const resultt = products.filter(product => product.title.toLowerCase().includes(trimmed.toLowerCase())
+        );
+    
+      setResult(resultt);
+      localStorage.setItem('result', JSON.stringify(resultt));
 
       }
 
@@ -184,7 +289,7 @@ export const ProductContextProvider = (props) => {
 
      
       const contextValue = {
-        products, filteredList, filterBySearchAdidas, filterBySearchAll, filterBySearchVans, filterBySearchPuma, filterBySearchNike, filterBySearch, cart, addToCart, removeFromCart, clearCart, decreaseQuantity, increaseQuantity, calculateTotal, result, updateCart
+        products, filteredList, filterBySearchAdidas, filterBySearchAll, filterBySearchVans, filterBySearchPuma, filterBySearchNike, filterBySearch, cart, addToCart, removeFromCart, clearCart, decreaseQuantity, increaseQuantity, calculateTotal, result, updateCart, filterBySearchRed, filterBySearchWhite, filterBySearchGreen, filterBySearchBlack, filterBySearchSandals, filterBySearchSneakers, filterBySearchHeels, filterBySearchFlats, searchInput, setSearchInput
       }
 
       return (

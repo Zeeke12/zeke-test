@@ -1,5 +1,5 @@
 import React from 'react'
-import { useApiData } from './feed/shop/db/ApiDataContext'
+import { useApiData } from '../db/ApiDataContext'
 
 const TestPage = () => {
     const { data, search } = useApiData();
@@ -8,7 +8,7 @@ const TestPage = () => {
   console.log(data.data.products)
 
   return (
-    <div style={{marginTop: '150px'}}>TestPage
+    <div style={{marginTop: '150px'}}> TestPage
       <input type='text' onChange={search} />
         <div>
         </div>

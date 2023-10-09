@@ -1,7 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
-import '../Feed.css'
-import { products } from './db/products';
+import { products } from '../../db/products';
 
 
 
