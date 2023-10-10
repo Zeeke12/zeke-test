@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { Routes, Route, HashRouter } from "react-router-dom";
 import Topbar from './component/topbar/Topbar';
 import Feed from './pages/Home/Feed';
 import { ProductContextProvider } from './db/ProductContext';
@@ -12,13 +12,12 @@ import TestPage from './component/TestPage';
 import Products from './pages/Products/Shared';
 
 
-
 function App() {
   return (
     <div>
     <ProductContextProvider>
       <ApiDataProvider>
-    <Router>
+    <HashRouter>
       <Topbar />
       <Routes>
         <Route path='/' element={<Feed />} />
@@ -29,7 +28,7 @@ function App() {
         <Route path='/result' element={<SearchResults />} />
         <Route path='/test' element={<TestPage />} />
       </Routes>
-    </Router>
+    </HashRouter>
     </ApiDataProvider>
     </ProductContextProvider>
     </div>
